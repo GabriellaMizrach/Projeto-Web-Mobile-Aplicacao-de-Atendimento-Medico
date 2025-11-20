@@ -23,15 +23,15 @@ A aplicação está hospedada na nuvem e pode ser acedida publicamente através 
 
 ## ✨ Funcionalidades Principais
 
-* **Gestão de Pacientes:** Cadastro, consulta, edição e exclusão de pacientes.
-* **Gestão de Médicos:** Cadastro, consulta, edição e exclusão de médicos e suas especialidades.
-* **Agendamento de Consultas:** Permite marcar novas consultas, associando um paciente a um médico, com validação de regras de negócio (ex: não marcar no mesmo horário).
-* **Controle de Agenda:** Visualização da agenda por dia e funcionalidade para cancelar consultas.
+* **Gestão de Pacientes:** Cadastro, consulta e exclusão de pacientes.
+* **Gestão de Médicos:** Cadastro, consulta e exclusão de médicos.
+* **Agendamento de Consultas:** Permite marcar novas consultas, associando um paciente a um médico.
+* **Controle de Agenda:** Visualização da agenda e funcionalidade para cancelar consultas.
 
 ## 🛠️ Tecnologias Utilizadas
 
 * **Backend:** Java (Spring Boot)
-* **Banco de Dados:** PostgreSQL 
+* **Banco de Dados:** Mysql/Workbench
 * **Hospedagem (Deploy):** Railway
 * **Controle de Versão:** Git & GitHub
 

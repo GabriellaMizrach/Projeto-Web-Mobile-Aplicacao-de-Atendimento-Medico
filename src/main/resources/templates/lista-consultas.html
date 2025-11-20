@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda de Consultas</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        h2 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
+        th { background-color: #8e44ad; color: white; } /* Roxo para agenda */
+        tr:hover { background-color: #f1f1f1; }
+        .status-tag { padding: 5px 10px; background: #eee; border-radius: 10px; font-size: 0.8em; }
+        .btn-delete { color: red; text-decoration: none; font-weight: bold; }
+        .back-link { display: block; margin-top: 20px; color: #7f8c8d; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<h2>Agenda de Consultas</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Data/Hora</th>
+        <th>Paciente</th>
+        <th>Médico</th>
+        <th>Status</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${listaConsultas}">
+        <td th:text="${#temporals.format(c.dataHora, 'dd/MM/yyyy HH:mm')}">Data</td>
+
+        <td th:text="${c.paciente.nome}">Paciente</td>
+        <td th:text="${c.medico.nome}">Médico</td>
+        <td><span class="status-tag" th:text="${c.status}">AGENDADA</span></td>
+        <td>
+            <a th:href="@{/consultas/excluir/{id}(id=${c.id})}" class="btn-delete" onclick="return confirm('Cancelar consulta?')">Cancelar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/" class="back-link">Voltar ao Menu</a>
+
+</body>
+</html>

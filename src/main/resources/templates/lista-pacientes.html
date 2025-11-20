@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pacientes</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        h2 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
+        th { background-color: #27ae60; color: white; }
+        tr:hover { background-color: #f1f1f1; }
+        .btn-delete { color: red; text-decoration: none; font-weight: bold; }
+        .back-link { display: block; margin-top: 20px; color: #7f8c8d; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<h2>Pacientes Cadastrados</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${listaPacientes}">
+        <td th:text="${p.id}">1</td>
+        <td th:text="${p.nome}">Fulano</td>
+        <td th:text="${p.cpf}">000.000.000-00</td>
+        <td th:text="${p.telefone}">(00) 0000-0000</td>
+        <td>
+            <a th:href="@{/pacientes/excluir/{id}(id=${p.id})}" class="btn-delete" onclick="return confirm('Tem certeza?')">Excluir</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/" class="back-link">Voltar ao Menu</a>
+
+</body>
+</html>

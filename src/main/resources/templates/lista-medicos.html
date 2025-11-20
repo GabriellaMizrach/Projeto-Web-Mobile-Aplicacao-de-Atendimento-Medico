@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Médicos</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        h2 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
+        th { background-color: #2980b9; color: white; } /* Azul para médicos */
+        tr:hover { background-color: #f1f1f1; }
+        .btn-delete { color: red; text-decoration: none; font-weight: bold; }
+        .back-link { display: block; margin-top: 20px; color: #7f8c8d; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<h2>Médicos Cadastrados</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CRM</th>
+        <th>Especialidade</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="m : ${listaMedicos}">
+        <td th:text="${m.id}">1</td>
+        <td th:text="${m.nome}">Dr. House</td>
+        <td th:text="${m.crm}">12345-BA</td>
+        <td th:text="${m.especialidade}">Diagnóstico</td>
+        <td>
+            <a th:href="@{/medicos/excluir/{id}(id=${m.id})}" class="btn-delete" onclick="return confirm('Tem certeza?')">Excluir</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/" class="back-link">Voltar ao Menu</a>
+
+</body>
+</html>

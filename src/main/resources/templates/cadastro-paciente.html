@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Paciente</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input { width: 95%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; }
+        button { width: 100%; padding: 10px; background-color: #27ae60; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #219150; }
+        .back-link { display: block; text-align: center; margin-top: 10px; color: #7f8c8d; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Cadastrar Paciente</h2>
+
+    <form action="/pacientes/salvar" method="post">
+
+        <label>Nome Completo:</label>
+        <input type="text" name="nome" required>
+
+        <label>CPF:</label>
+        <input type="text" name="cpf" required>
+
+        <label>Telefone:</label>
+        <input type="text" name="telefone" required>
+
+        <label>Data de Nascimento:</label>
+        <input type="text" name="data">
+
+        <button type="submit">Salvar Paciente</button>
+    </form>
+
+    <a href="/" class="back-link">Voltar ao Menu</a>
+</div>
+
+</body>
+</html>

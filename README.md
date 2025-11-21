@@ -13,6 +13,8 @@ O objetivo principal desta aplicação é solucionar o problema de gerenciamento
 ☁️ Aplicação em Nuvem
 
 A aplicação está hospedada na nuvem e pode ser acedida publicamente através do link abaixo:
+projeto-web-mobile-aplicacao-de-atendimento-medi-production.up.railway.app
+
 ✨ Funcionalidades Principais
 
     Gestão de Pacientes: Cadastro, consulta e exclusão de pacientes.
